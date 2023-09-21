@@ -1,6 +1,8 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+)
 
 func main() {
 	app := fiber.New(
@@ -12,7 +14,9 @@ func main() {
 
 	app.Static("/", "./public")
 
-	mainRouter(app)
+	var prefix string = "/api"
+	api := app.Group(prefix)
 
+	mainRouter(api)
 	app.Listen(":3000")
 }
