@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -18,5 +20,6 @@ func main() {
 	api := app.Group(prefix)
 
 	mainRouter(api)
-	app.Listen(":3000")
+	log.Fatal(app.Listen(":3000"))
+
 }
