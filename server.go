@@ -12,5 +12,7 @@ func main() {
 
 	app.Static("/", "./public")
 
+	mainRouter(app)
+
 	app.Listen(":3000")
 }
